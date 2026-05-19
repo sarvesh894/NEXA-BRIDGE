@@ -144,7 +144,7 @@ export default function Index() {
               <button key={l} onClick={() => document.getElementById(l.toLowerCase().replace(/ /g, '-'))?.scrollIntoView({ behavior: 'smooth' })}
                 className="hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-[width] after:duration-300 hover:after:w-full">{l}</button>
             ))}
-            <button onClick={() => navigate('/institutions')}
+            <button onClick={() => navigate('/for-institutions')}
               className="hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-[width] after:duration-300 hover:after:w-full flex items-center gap-1">
               <Building2 className="h-3.5 w-3.5" /> For Institutions
             </button>
@@ -377,7 +377,7 @@ export default function Index() {
             {roles.map((r, i) => (
               <Reveal key={i} delay={i * 0.15}>
                 <motion.div whileHover={{ y: -6 }}
-                  onClick={r.title === 'Institutions' ? () => navigate('/institutions') : undefined}
+                  onClick={r.title === 'Institutions' ? () => navigate('/for-institutions') : undefined}
                   className={`relative p-8 rounded-3xl bg-gradient-to-br ${r.gradient} border border-border/30 text-center ${r.title === 'Institutions' ? 'cursor-pointer' : 'cursor-default'} hover:shadow-xl transition-all duration-500`}>
                   <div className="text-5xl mb-4">{r.emoji}</div>
                   <h4 className="font-bold text-xl mb-2">{r.title}</h4>
@@ -556,11 +556,11 @@ export default function Index() {
 
           <Reveal className="text-center">
             <div className="inline-flex flex-col sm:flex-row gap-4">
-              <Button size="lg" onClick={() => navigate('/institutions')}
+              <Button size="lg" onClick={() => navigate('/for-institutions')}
                 className="h-13 px-8 text-base font-semibold bg-gradient-to-r from-primary to-accent hover:opacity-90 shadow-xl shadow-primary/25">
                 Register Your Institution <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button size="lg" variant="outline" onClick={() => navigate('/institutions')}
+              <Button size="lg" variant="outline" onClick={() => navigate('/for-institutions')}
                 className="h-13 px-8 text-base font-semibold">
                 Learn More <Building2 className="ml-2 h-4 w-4" />
               </Button>
@@ -623,7 +623,7 @@ export default function Index() {
                   { l: 'Login', a: () => navigate('/auth') },
                   { l: 'Sign Up', a: () => navigate('/auth') },
                   { l: 'Features', a: () => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' }) },
-                  { l: 'For Institutions', a: () => navigate('/institutions') },
+                  { l: 'For Institutions', a: () => navigate('/for-institutions') },
                 ].map(item => (
                   <li key={item.l} onClick={item.a} className="text-sm text-foreground/70 hover:text-primary cursor-pointer transition-colors flex items-center gap-2">
                     <ChevronRight className="h-3 w-3 text-primary/50" /> {item.l}

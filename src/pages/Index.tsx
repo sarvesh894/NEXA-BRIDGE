@@ -31,7 +31,7 @@ const scaleIn = (delay = 0) => ({
   visible: { opacity: 1, scale: 1, transition: { delay, duration: 0.7, ease } },
 });
 
-function Reveal({ children, className = '', delay = 0 }) {
+function Reveal({ children, className = '', delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-60px' });
   return (
@@ -142,10 +142,10 @@ export default function Index() {
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
             {['Features', 'How It Works', 'Preview'].map(l => (
               <button key={l} onClick={() => document.getElementById(l.toLowerCase().replace(/ /g, '-'))?.scrollIntoView({ behavior: 'smooth' })}
-                className="hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-[width] after:duration-300 hover:after:w-full">{l}</button>
+                className="hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full">{l}</button>
             ))}
             <button onClick={() => navigate('/for-institutions')}
-              className="hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-[width] after:duration-300 hover:after:w-full flex items-center gap-1">
+              className="hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full flex items-center gap-1">
               <Building2 className="h-3.5 w-3.5" /> For Institutions
             </button>
           </div>

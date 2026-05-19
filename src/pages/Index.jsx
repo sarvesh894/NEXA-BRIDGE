@@ -21,7 +21,7 @@ import previewChat from '@/assets/preview-chat.jpg';
 import previewDirectory from '@/assets/preview-directory.jpg';
 
 /* ── Animations ── */
-const ease = [0.22, 1, 0.36, 1];
+const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { delay, duration: 0.8, ease } },
